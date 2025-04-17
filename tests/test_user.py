@@ -61,7 +61,7 @@ def test_delete_user():
     response = client.delete("/api/v1/user", params={"email": email_to_delete})
     assert response.status_code == 204
 
-    # Проверим, что пользователь удалён
+    # Проверим, что пользователь удалён 
     get_response = client.get("/api/v1/user", params={"email": email_to_delete})
     assert get_response.status_code == 404
 
